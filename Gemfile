@@ -61,3 +61,4 @@ gem 'pry-rails'
 gem 'rack-cors', require: 'rack/cors'
 gem 'pry-byebug'
 gem 'jquery-rails'
+gem 'rails_12factor', group: :production
