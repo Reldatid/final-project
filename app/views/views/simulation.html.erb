@@ -1,0 +1,31 @@
+<div id="simulation-grid">
+  <div id="simulation-container"></div>
+  <div id="p5-controls">
+    <button onclick=toggleSimulation()>Pause/Play</button>
+    <button onclick=update()>Step Once</button>
+    <button onclick=resetCart()>Reset Cart</button>
+  </div>
+  <div id="gen-alg-controls">
+    <button>Breed New Generation</button>
+    <button>Reset All Generations</button>
+  </div>
+  <div id="navigation">
+      <a href=welcome>Head back to the main page</a>
+      or
+      <a href=graphs>Go to the graphs and network visualiser</a>
+  </div>
+</div>
+
+
+<script>
+  function setup(){
+    $p5 = $('#simulation-container')
+    let width = $p5[0].clientWidth;
+    let height = $p5[0].clientHeight
+    let cartSim = createCanvas(width, height);
+    cartSim.parent('simulation-container')
+    background(0);
+    cart = new Cart;
+    pole = new Pole;
+  }
+</script>
