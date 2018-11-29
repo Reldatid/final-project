@@ -23,8 +23,5 @@ class ViewsController < ApplicationController
       @db_generation_fitness << data[k][:fitness]
       @db_generation_id << data[k][:id]
     }
-    puts @db_generation_fitness
-    puts @db_generation_numbers
-    puts @db_generation_id
   end
 end

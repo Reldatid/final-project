@@ -1,18 +1,25 @@
 <div id="simulation-grid">
+  <div id="description">
+    <h1>Pole Balance Genetic Algorithm</h1>
+    <p>This is a pole balance simulation to train a genetic algorithm in. The program can control the motion of the cart, and must balance the pole for as long as possible. <br>
+    To do this, we follow the same principle as selective breeding in nature. The program generates a population of completely random networks (or 'creatures'), in this case, 200 of them. They're then tested on the problem and rated. In this instance its how many frames of the simulation it survives before the pole falls beyond 30° to the horizontal. You can hit the 'reset cart' button and see one of those random networks control the cart for a brief moment before the pole falls. <br>
+    This particular algorithm is flawed in a few ways, and I've left it that way in this project demo to illustrate the second half nicely.</p>
+    <p>Have a little play around, and notice how at a certain point the new generations don't produce new behaviour. I suggest getting to that point and 'breeding' at least 3 more generations before going to look at the graphs.</p>
+  </div>
   <div id="simulation-container"></div>
   <div id="p5-controls">
-    <button onclick=toggleSimulation()>Pause/Play</button>
-    <button onclick=update()>Step Once</button>
-    <button onclick=resetCart()>Reset Cart</button>
+    <button class="sim-controls" onclick=toggleSimulation()>Pause/Play</button>
+    <button class="sim-controls" onclick=update()>Step Once</button>
+    <button class="sim-controls" onclick=resetCart()>Reset Cart</button>
   </div>
   <div id="gen-alg-controls">
-    <button>Breed New Generation</button>
-    <button>Reset All Generations</button>
+    <button class="sim-controls" onclick=stepEvolution()>Breed New Generation</button>
+    <button class="sim-controls" onclick=resetEvolution()>Reset All Generations</button>
   </div>
   <div id="navigation">
       <a href=welcome>Head back to the main page</a>
       or
-      <a href=graphs>Go to the graphs and network visualiser</a>
+      <a href=graphs>Go to the graphs and Network Visualiser</a>
   </div>
 </div>
 
@@ -27,8 +34,9 @@
     background(0);
     cart = new Cart;
     pole = new Pole;
+    balancer = population[0].generateNetwork()
   }
-  
+
   function draw() {
     background(0);
     if(simulating){

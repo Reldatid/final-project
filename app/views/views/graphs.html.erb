@@ -1,12 +1,19 @@
-<header>
-  <h1>DATA</h1>
-</header>
-<div id="line-chart-container">
-</div>
-<div id="bar-chart-container"></div>
-<div id="neural-net-viewer-container">
+<div id="chart-grid">
+  <div id="header">
+    <h1>Visual Data</h1>
+    <p id="description">Hey, have you guys ever heard of these things called graphs?! Man am I about to bust your noggin. No but really. It can be really hard to figure out where bugs are in code, and I've found these 3 visualisations very useful. <br>
+    The top graph shows the average fitness of sequential generations. Clicking on a datapoint will bring up a bar graph of the genomes/networks belonging to that generation. <br>
+    Clicking on one of THOSE brings up an interactive visualisation of the network itself. My plan for the future is to add features make it more informative and interactable.</p>
+    Head back to the <a href=welcome>Welcome Page</a> or go to the
+    <a href=simulation>Simulation</a> <br>
+    <button onclick=loadLocal()>Load Local Data</button>
+    <button onclick=initPage()>Load Database Data</button>
+  </div>
+  <div id="upper-chart-aligner">
+    <div id="line-chart-container"></div>
+  </div>
+  <div id="bar-chart-container"></div>
   <div id="node-chart-container"></div>
-  <div id="simulator"></div>
 </div>
 
 <script>
@@ -14,7 +21,6 @@
     dbGenerationFitness = <%= @db_generation_fitness %>
     dbGenerationNumbers = <%= @db_generation_numbers %>
     dbGenerationIDs = <%= @db_generation_id %>
-    console.log(<%= @generations %>)
     // dbGenerations = <%= @generations %>
     initPage();
   })

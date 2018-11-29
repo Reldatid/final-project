@@ -91,12 +91,13 @@ const compareGenomes = function(a,b){
 }
 
 const newGeneration = function(){
-  generations.push([...population]);
+  genomes = [...population];
   nextGen = [];
   let totalFitness = 0;
   for (var i = 0; i < population.length; i++) {
     totalFitness += population[i].fitness;
   }
+  generations.push({ average_fitness: totalFitness/200, genomes})
 
   for (var i = 0; i < 10; i++) {
 
@@ -114,7 +115,7 @@ const newGeneration = function(){
     const seedGenome = new Genome;
     for (var j = 0; j < 2; j++) {
       seedGenome.genes.push(new Gene('angle', i, (Math.random()*20)-10, true));
-      seedGenome.genes.push(new Gene('xPos', i, (Math.random()*20)-10, true));
+      seedGenome.genes.push(new Gene('angularVelocity', i, (Math.random()*20)-10, true));
       seedGenome.genes.push(new Gene('bias', i, (Math.random()*20)-10, true));
       seedGenome.genes.push(new Gene(i, 'control', (Math.random()*20)-10, true));
     }
@@ -158,7 +159,7 @@ while (population.length < 200){
   const seedGenome = new Genome;
   for (var i = 0; i < 2; i++) {
     seedGenome.genes.push(new Gene('angle', i, (Math.random()*20)-10, true));
-    seedGenome.genes.push(new Gene('xPos', i, (Math.random()*20)-10, true));
+    seedGenome.genes.push(new Gene('angularVelocity', i, (Math.random()*20)-10, true));
     seedGenome.genes.push(new Gene('bias', i, (Math.random()*20)-10, true));
     seedGenome.genes.push(new Gene(i, 'control', (Math.random()*20)-10, true));
   }
