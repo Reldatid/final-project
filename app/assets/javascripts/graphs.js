@@ -71,7 +71,7 @@ const loadGeneration = function( evt, id ){
   barChart = loadingChart('bar-chart', 'bar'),
   barChart.data.datasets[0].backgroundColor = 'rgba(255, 99, 132, 1)';
   barChart.update();
-  $.get(`http://localhost:3000/generations/${id}`)
+  $.get(`generations/${id}`)
   .done(( data ) => {
     createGenerationChart(data)
   })
@@ -108,7 +108,7 @@ const createGenerationChart = function( data ){
 }
 
 const loadGenome = function( evt , id ){
-  $.get(`http://localhost:3000/genomes/${id}`)
+  $.get(`genomes/${id}`)
   .done(( data ) => {
     createCytoscape(data.strand);
   })

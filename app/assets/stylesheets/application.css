@@ -76,10 +76,6 @@ img{
   align-items: flex-start;
 }
 
-img{
-  width: 100%;
-}
-
 #simulation-grid{
   display: grid;
   position: absolute;
