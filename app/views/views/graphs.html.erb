@@ -1,0 +1,21 @@
+<header>
+  <h1>DATA</h1>
+</header>
+<div id="line-chart-container">
+</div>
+<div id="bar-chart-container"></div>
+<div id="neural-net-viewer-container">
+  <div id="node-chart-container"></div>
+  <div id="simulator"></div>
+</div>
+
+<script>
+  $(document).ready(()=>{
+    dbGenerationFitness = <%= @db_generation_fitness %>
+    dbGenerationNumbers = <%= @db_generation_numbers %>
+    dbGenerationID = <%= @db_generation_id %>
+    console.log(<%= @generations %>)
+    // dbGenerations = <%= @generations %>
+    initPage();
+  })
+</script>

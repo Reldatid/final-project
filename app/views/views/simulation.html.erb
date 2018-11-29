@@ -28,4 +28,12 @@
     cart = new Cart;
     pole = new Pole;
   }
+  
+  function draw() {
+    background(0);
+    if(simulating){
+      update();
+    }
+    render();
+  }
 </script>

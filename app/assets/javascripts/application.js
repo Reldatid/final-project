@@ -14,3 +14,7 @@
 //= require activestorage
 //= require_tree .
 //= require jquery
+
+$(document).ready(() => {
+  $('#defaultCanvas0').remove()
+})

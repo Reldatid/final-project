@@ -7,13 +7,6 @@ let avFitness = 0;
 //controls
 let simulating = true;
 
-function draw() {
-  background(0);
-  if(simulating){
-    update();
-  }
-  render();
-}
 
 const toggleSimulation = function() {
   simulating = simulating ? false : true;
